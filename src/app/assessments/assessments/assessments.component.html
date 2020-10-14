@@ -1,1 +1,45 @@
-<p>assessments works!</p>
+<div class="container">
+  <mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Search" (keyup)="applyFilter($event)" >
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="Effective">
+      <mat-header-cell *matHeaderCellDef> Effective </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Effective}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="Thru">
+      <mat-header-cell *matHeaderCellDef> Thru </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Thru}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="hra">
+      <mat-header-cell *matHeaderCellDef> hra </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.hra}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Size">
+      <mat-header-cell *matHeaderCellDef> Size </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Size}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Programs">
+      <mat-header-cell *matHeaderCellDef> Programs </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Programs}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row class="headerCustom" *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </table>
+
+</div>
