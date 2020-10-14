@@ -1,0 +1,15 @@
+<div class="panel">
+    <mat-form-field>
+        <mat-label>date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>time</mat-label>
+        <mat-select>
+            <mat-option>12:00AM</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

@@ -1,0 +1,28 @@
+.panel {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+.panel > .panel {
+    padding: 0px;
+}
+.panel > *.full-width {
+    flex-grow: 9;
+    width: 100%;
+}
+.panel > *.third-width {
+    flex-grow: 3;
+    width: 33%;
+}
+.panel > *.two-thirds-width {
+    flex-grow: 6;
+    width: 66%;
+}
+.panel > *.half-width {
+    flex-grow: 2;
+    width: 50%;
+}
+.panel > button:not(:last-of-type) {
+    margin-bottom: 10px;
+}

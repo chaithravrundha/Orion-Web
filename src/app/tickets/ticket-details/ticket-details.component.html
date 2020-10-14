@@ -1,0 +1,72 @@
+<div class="panel">
+    <mat-form-field class="half-width">
+        <mat-label>caller</mat-label>
+        <input matInput name="caller">
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+        <mat-label>phone number</mat-label>
+        <input matInput name="phone">
+    </mat-form-field>
+
+    <mat-button-toggle-group (change)="ticketType = $event.value" class="full-width panel">
+        <mat-button-toggle class="half-width" value="provider">provider call</mat-button-toggle>
+        <mat-button-toggle class="half-width" value="member">member call</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <p class="full-width" *ngIf="ticketType">
+        <button mat-button>same as caller</button>
+    </p>
+
+    <mat-form-field class="full-width" *ngIf="ticketType === 'provider'">
+        <mat-label>provider search</mat-label>
+        <input matInput name="providersearch">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" *ngIf="ticketType === 'member' || ticketType === 'provider'">
+        <mat-label>member search</mat-label>
+        <input matInput name="membersearch">
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>category</mat-label>
+        <mat-select matInput name="category">
+            <mat-option>Category 1</mat-option>
+            <mat-option>Category 2</mat-option>
+            <mat-option>Category 3</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>reason</mat-label>
+        <mat-select matInput name="reason">
+            <mat-option>Reason 1</mat-option>
+            <mat-option>Reason 2</mat-option>
+            <mat-option>Reason 3</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>priority</mat-label>
+        <mat-select matInput name="priority">
+            <mat-option>Low</mat-option>
+            <mat-option>Medium</mat-option>
+            <mat-option>Escalated</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>created by</mat-label>
+        <input matInput name="createdby">
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>start date/time</mat-label>
+        <input matInput name="startdate">
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>stop date/time</mat-label>
+        <input matInput name="stopdate">
+    </mat-form-field>
+</div>

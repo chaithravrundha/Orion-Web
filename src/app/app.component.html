@@ -1,0 +1,79 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row class="toolbar">
+
+        <div #toolbarMenus class="toolbar-menus">
+
+            <a routerLink="/" mat-button>
+                <img src="assets/images/orion-logo-white.png" height="25px;" />
+            </a>
+
+            <button mat-button [matMenuTriggerFor]="careManagementMenu">
+                Care Management
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #careManagementMenu>
+                <a routerLink="assessments" mat-menu-item>Assessments</a>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="customerServiceMenu" disabled>
+                Customer Service
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #customerServiceMenu>
+                <a routerLink="my/tickets" mat-menu-item>My Tickets</a>
+                <a routerLink="my/tasks" mat-menu-item>My Tasks</a>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="claimInventoryManagementMenu" disabled>
+                Claim Inventory Management
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #claimInventoryManagementMenu>
+                <a routerLink="my/claimsqueue" mat-menu-item>My Claims Queue</a>
+                <a routerLink="my/claimtasks" mat-menu-item>My Claim Tasks</a>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="administrationMenu" disabled>
+                Administration
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #administrationMenu>
+                <a routerLink="groups" mat-menu-item>Groups</a>
+                <a routerLink="queues" mat-menu-item>Queues</a>
+                <a routerLink="tickets" mat-menu-item>Tickets</a>
+                <a routerLink="tasks" mat-menu-item>Tasks</a>
+                <a routerLink="storage" mat-menu-item>Storage</a>
+                <a routerLink="attachments" mat-menu-item>Attachments</a>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="reportsMenu" disabled>
+                Reports
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #reportsMenu>
+            </mat-menu>
+        </div>
+
+        <div #toolbarIcons class="toolbar-icons">
+            <button mat-icon-button disabled>
+                <mat-icon>info</mat-icon>
+            </button>
+            <button mat-icon-button disabled>
+                <mat-icon>notification_important</mat-icon>
+            </button>
+            <button mat-icon-button [matMenuTriggerFor]="userMenu">
+                <mat-icon>person</mat-icon>
+            </button>
+            <mat-menu #userMenu>
+                <button mat-menu-item disabled>
+                    <span>About</span>
+                </button>
+                <button mat-menu-item disabled>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

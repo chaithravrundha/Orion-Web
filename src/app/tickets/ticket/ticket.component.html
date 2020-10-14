@@ -1,0 +1,17 @@
+<div class="panel">
+    <p class="third-width">
+        <mat-tab-group>
+            <mat-tab label="Details">
+                <plx-ticket-details></plx-ticket-details>
+            </mat-tab>
+            <mat-tab label="Tasks">
+                <plx-entity-tasks context="tickets" [context-id]="ticket.Id"></plx-entity-tasks>
+            </mat-tab>
+            <mat-tab label="Attachments">
+            </mat-tab>
+        </mat-tab-group>
+    </p>
+    <p class="two-thirds-width">
+        <plx-ticket-related></plx-ticket-related>
+    </p>
+</div>

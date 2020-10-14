@@ -1,0 +1,72 @@
+<div class="panel">
+    <p class="full-width buttons">
+        <button mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </p>
+    <mat-form-field class="full-width">
+        <mat-label>title / subject</mat-label>
+        <input matInput name="title" [(value)]="Title">
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+        <mat-label>due date</mat-label>
+        <input matInput [matDatepicker]="duedate" [(value)]="DueDate">
+        <mat-datepicker-toggle matSuffix [for]="duedate"></mat-datepicker-toggle>
+        <mat-datepicker #duedate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+        <mat-label>assigned to</mat-label>
+        <mat-select [(value)]="AssignedTo">
+            <mat-option>dgood</mat-option>
+            <mat-option>user1</mat-option>
+            <mat-option>user2</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>created by</mat-label>
+        <input matInput name="createdby" readonly [(value)]="CreatedBy">
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>start date / time</mat-label>
+        <input matInput name="startdate" readonly [(value)]="StartDate">
+    </mat-form-field>
+
+    <mat-form-field class="third-width">
+        <mat-label>end date / time</mat-label>
+        <input matInput name="enddate" readonly>
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+        <mat-label>priority</mat-label>
+        <mat-select>
+            <mat-option>Low</mat-option>
+            <mat-option>Normal</mat-option>
+            <mat-option>High</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+        <mat-label>status</mat-label>
+        <mat-select>
+            <mat-option>Open</mat-option>
+            <mat-option>Delegated</mat-option>
+            <mat-option>Resolved</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>description</mat-label>
+        <textarea matInput name="description" [(value)]="Description"></textarea>
+    </mat-form-field>
+
+    <mat-checkbox class="full-width" [(value)]="NotifyCreator">notify me when status changes</mat-checkbox>
+
+    <plx-reminders class="full-width"></plx-reminders>
+
+    <plx-attachments class="full-width"></plx-attachments>
+
+</div>

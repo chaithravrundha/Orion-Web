@@ -1,0 +1,7 @@
+<mat-selection-list *ngIf="!selected" [multiple]="false">
+    <mat-list-option *ngFor="let task of tasks" (click)="select(task)" class="list-item">
+        {{ task.Title }}
+    </mat-list-option>
+</mat-selection-list>
+
+<plx-task-editor *ngIf="selected" [task]="selected" (on-close)="clear()"></plx-task-editor>

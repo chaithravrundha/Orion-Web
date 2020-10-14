@@ -1,0 +1,10 @@
+.panel {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+.panel > *.full-width {
+    flex-grow: 9;
+    width: 100%;
+}

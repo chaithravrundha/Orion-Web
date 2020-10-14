@@ -1,0 +1,14 @@
+.filters {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+table.mat-table {
+    width: 100%;
+}
+.views {
+    display: flex;
+    flex-direction: column;
+}
