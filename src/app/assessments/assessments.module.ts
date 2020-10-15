@@ -9,6 +9,10 @@ import { AssessmentsRoutingModule } from './assessments-routing.module';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { ResizableModule } from 'angular-resizable-element';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [AssessmentsComponent, AssessmentComponent],
@@ -17,7 +21,11 @@ import {MatInputModule} from '@angular/material/input';
     CommonModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ResizableModule,
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class AssessmentsModule { }

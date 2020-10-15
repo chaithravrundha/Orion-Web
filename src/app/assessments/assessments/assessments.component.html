@@ -3,43 +3,19 @@
     <mat-label>Search</mat-label>
     <input matInput placeholder="Search" (keyup)="applyFilter($event)" >
   </mat-form-field>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    <div class="mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <mat-header-row *matHeaderRowDef="displayedColumns;" class="mat-elevation-z1"></mat-header-row>
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+      <mat-header-cell class="headerCustom" *matHeaderCellDef mat-sort-header mwlResizable (resizeEnd)="onResizeEnd($event, column)"
+        [resizeEdges]="{bottom: false, right: true, top: false, left: true}">
+        {{ column | titlecase }}
+      </mat-header-cell>
+      <mat-cell matTooltip="{{item[column]}}" *matCellDef="let item">{{ item[column] }}</mat-cell>
     </ng-container>
-
-
-    <ng-container matColumnDef="Effective">
-      <mat-header-cell *matHeaderCellDef> Effective </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Effective}} </mat-cell>
-    </ng-container>
-
-
-    <ng-container matColumnDef="Thru">
-      <mat-header-cell *matHeaderCellDef> Thru </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Thru}} </mat-cell>
-    </ng-container>
-
-
-    <ng-container matColumnDef="hra">
-      <mat-header-cell *matHeaderCellDef> hra </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.hra}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Size">
-      <mat-header-cell *matHeaderCellDef> Size </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Size}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Programs">
-      <mat-header-cell *matHeaderCellDef> Programs </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Programs}} </mat-cell>
-    </ng-container>
-
-    <mat-header-row class="headerCustom" *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </table>
-
+    <mat-row matRipple id="row-{{index}}" *matRowDef="let row; columns: displayedColumns;  let index = index;" (click)="selectRow(index)">
+    </mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
 </div>
